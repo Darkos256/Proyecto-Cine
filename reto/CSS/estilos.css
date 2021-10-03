@@ -10,102 +10,11 @@
     margin: 0;
     box-sizing: border-box;
 }
-.navegador{
-    padding: 10px 20px;
-}
-header{
-    background: var(--azulOscro);
-}
-body{
-    background: var(--blanco);
-    font-family: 'Slabo 27px', serif;
-    font-family: 'Open Sans', sans-serif;
-}
-a{
-    text-decoration: none;
-}
-.logo{
-    width: 100%;
-    margin-right: 25px;
-    margin-left: 25px;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-header .logo{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.navegacion{
-    display: flex;
-    display: -webkit-flex;
-    flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
-}
-lu {
-    list-style-position: outside;
-    padding: 15px 5px;
-    margin: 0;
-    list-style-type: none;
-    margin-bottom: 0;
-    
-}
-.buscar{
-    width: 200px;
-}
-.buscar>form input {
-    background-color: rgba(255, 255, 255, 0.973);
-    border-radius: 20px;
-    border: 0;
-    margin-bottom: 0;
-    padding-right: 50px;
-}
-.buscar>form {
-    position: relative;
-}
-form {
-    display: block;
-}
-nav ul, [class*=menu] [class*=List]{
-    list-style-type: none;
-}
-header li{
-    display: inline-block;
-}
-
-li{
-    
-    display: list-item;
-    text-align: -webkit-match-parent;
-}
-
-/*header .logotipo{
-    font-weight: normal;
-    color: var(--letras);
-    font-size: 40px;
-}*/
-header nav a{
-    color: var(--grisClaro);
-    text-decoration: none;
-    margin-right: 20px;
-}
-header nav a:hover,
-header nav a.activo{
-    color: var(--blanco);
-}
-h3 {
-    font-size: 20px;
-    font-weight: inherit;
-    line-height: 1;
-    margin-bottom: 15px;
-    color: var(--azul);
-}
-
 /*-------------cuerpo principal----------------*/
 
 .cuerpo{
     position: relative;
-    z-index: 2;
+    z-index: 0;
     padding-top: 20px;
     flex: 1 0 auto;
     overflow: hidden;
@@ -243,9 +152,3 @@ img {
 .Main>*:last-child{
     margin-bottom: 0;
 }
-div article img :hover{
-    background: linear-gradient(rgba(0, 0, 0, .50)0%, rgba(0, 0, 0, .50)100%);
-
-
-}
-
