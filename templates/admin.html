@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  <meta charset="UTF-8">
+  <title> Pagina de Admin Principal </title>
+      <link rel="stylesheet" href="../static/styles/admin.css">
+     <!-- Latest minified bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+    <!-- Latest minified bootstrap js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+
+<body>
+    
+    
+    <h1>Bienvenido al panel</h1>
+    <h1>de Administración</h1>
+
+
+  <div class="box">
+    <div class="box-item">
+        <p class="btn btn-primary btn-block btn-large">Inicio</p>
+        <ul class="box-item-content">
+            
+            <li type="button" data-toggle="modal" data-target="#ConfiguracionCuenta">Configuración de la cuenta</li> 
+            <li type="button" data-toggle="modal" data-target="principalAdmin.html">Pantalla de Inicio</li> 
+            
+        </ul>
+    </div>
+    <div class="box-item">
+        <t class="btn btn-primary btn-block btn-large">Gestion de Usuarios</t>
+        <ul class="box-item-content">
+            <li type="button" data-toggle="modal" data-target="#PanelCreacionUsuarios">Crear Usuarios</li>
+            <li type="button" data-toggle="modal" data-target="#PanelEdicionUsuarios">Editar Usuarios</li>
+            <li type="button" data-toggle="modal" data-target="#PanelEliminarUsuarios">Eliminar Usuarios</li>
+
+        </ul>
+    </div>
+    <div class="box-item">
+        <t class="btn btn-primary btn-block btn-large">Gestion de películas</t>
+        <ul class="box-item-content">
+            <li type="button" data-toggle="modal" data-target="#PanelCreacionPeliculas">Crear películas</li>
+            <li type="button" data-toggle="modal" data-target="#PanelEdicionPeliculas">Editar películas</li>
+            <li type="button" data-toggle="modal" data-target="#PanelEliminarPeliculas">Eliminar películas</li>
+
+        </ul>
+    </div>
+    <div class="box-item">
+        <t class="btn btn-primary btn-block btn-large">Cerrar Sesión</t>
+        <ul class="box-item-content">
+            <li type="button" data-toggle="modal" data-target="#ConfirmacionCerrarSesion">Cerrar sesión</li>
+            
+        </ul>
+    </div>
+
+</div>
+
+    <p>
+    <img src="../static/assets/CineColombia Azul.png">
+    </p>
+
+
+  <!--modal de Configuración de la cuenta-->
+  <div class="modal fade" id="ConfiguracionCuenta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+          <h5 class="modal-title" id="exampleModalLabel">Cambio de contraseña</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="email1">Usuario</label>
+              <input class="form-control" type="text" placeholder="Usuario" readonly>              
+              <small id="emailHelp" class="form-text text-muted">Tu información esta segura con nosotros</small>
+            </div>
+            <div class="form-group">
+              <label for="password1">Contraseña</label>
+              <input type="password" class="form-control" id="password1" placeholder="Contraseña Nueva">
+            </div>
+            <div class="form-group">
+              <label for="password1">Confirmar Contraseña</label>
+              <input type="password" class="form-control" id="password2" placeholder="Confirma tu contraseña">
+            </div>
+          </div>
+          <div class="modal-footer border-top-0 d-flex justify-content-center">
+            <button type="submit" class="btn btn-danger">Cancelar</button>
+            <button type="submit" class="btn btn-success">Cambiar contraseña</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <!--modal de creacion de usuarios-->
+  <div class="modal fade" id="PanelCreacionUsuarios" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+          <h5 class="modal-title" id="PanelCreacionUsuarios">Panel de creación de usuarios</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="email1">Nombre completo del usuario</label>
+              <input class="form-control" type="text" placeholder="Nombre del usuario">              
+            </div>
+            <div class="form-group">
+              <label for="email1">Cedula</label>
+              <input class="form-control" type="text" placeholder="Cedula del usuario">              
+            </div>
+            <div class="form-group">
+              <label for="email1">Usuario en el portal</label>
+              <input class="form-control" type="text" placeholder="Usuario con el que accedera a la aplicación">              
+            </div>
+            <div class="form-group">
+              <label for="password1">Contraseña</label>
+              <input type="password" class="form-control" id="password1" placeholder="Contraseña de acceso">
+            </div>
+            <div class="form-group">
+              <label for="password1">Confirmar Contraseña</label>
+              <input type="password" class="form-control" id="password2" placeholder="Confirma la contraseña de acceso">
+            </div>
+          </div>
+          <div class="modal-footer border-top-0 d-flex justify-content-center">
+            <button type="submit" class="btn btn-danger">Cancelar</button>
+            <button type="submit" class="btn btn-success">Crear usuario</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <!--modal de edicion de usuarios-->
+  <div class="modal fade" id="PanelEdicionUsuarios" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+          <h5 class="modal-title" id="PanelCreacionUsuarios">Panel de edición de usuarios</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <label for="email1">Nombre completo del usuario</label>
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Nombre del usuario">
+              <span class="input-group-btn">
+                <button class="btn btn-default glyphicon glyphicon-search" type="button"></button>
+              </span>              
+
+            </div>
+            <div class="form-group">
+              <label for="email1">Cedula</label>
+              <input class="form-control" type="text" placeholder="Cedula del usuario">              
+            </div>
+            <div class="form-group">
+              <label for="email1">Usuario en el portal</label>
+              <input class="form-control" type="text" placeholder="Usuario con el que accedera a la aplicación">              
+            </div>
+            <div class="form-group">
+              <label for="password1">Contraseña</label>
+              <input type="password" class="form-control" id="password1" placeholder="Contraseña de acceso">
+            </div>
+            <div class="form-group">
+              <label for="password1">Confirmar Contraseña</label>
+              <input type="password" class="form-control" id="password2" placeholder="Confirma la contraseña de acceso">
+            </div>
+          </div>
+          <div class="modal-footer border-top-0 d-flex justify-content-center">
+            <button type="submit" class="btn btn-danger">Cancelar</button>
+            <button type="submit" class="btn btn-success">Editar usuario</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <!--modal de eliminar usuarios-->
+  <div class="modal fade" id="PanelEliminarUsuarios" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+          <h5 class="modal-title" id="PanelCreacionUsuarios">Panel de eliminar de usuarios</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <label for="email1">Cedula</label>
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Cedula del usuario">
+              <span class="input-group-btn">
+                <button class="btn btn-default glyphicon glyphicon-search" type="button"></button>
+              </span>              
+
+            </div>
+            <div class="form-group">
+              <label for="email1">Nombre completo del usuario</label>
+              <input class="form-control" type="text" placeholder="Nombre del usuario" readonly>              
+            </div>
+            <div class="form-group">
+              <label for="email1">Usuario en el portal</label>
+              <input class="form-control" type="text" placeholder="Usuario con el que accedera a la aplicación" readonly>              
+            </div>
+          </div>
+          <div class="modal-footer border-top-0 d-flex justify-content-center">
+            <button type="submit" class="btn btn-danger">Cancelar</button>
+            <button type="submit" class="btn btn-success">Eliminiar Usuario</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+
+
+  <!--modal de creacion de películas-->
+  <div class="modal fade" id="PanelCreacionPeliculas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+          <h5 class="modal-title" id="PanelCreacionUsuarios">Panel de creación de películas</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="email1">Nombre de la película</label>
+              <input class="form-control" type="text" placeholder="Nombre de la película a agregar">              
+            </div>
+            <div class="form-group">
+              <label for="email1">Funcion 1</label>
+              <input class="form-control" type="datetime-local">              
+            </div>
+            <div class="form-group">
+              <label for="email1">Funcion 2</label>
+              <input class="form-control" type="datetime-local">              
+            </div>
+            <div class="form-group">
+              <label for="email1">Funcion 3</label>
+              <input class="form-control" type="datetime-local">              
+            </div>
+            <div class="form-group">
+              <label for="email1">Costo de Funcion 2D</label>
+              <input class="form-control" type="number" placeholder="Costo para entrar en la funcion 2D">              
+            </div>
+            <div class="form-group">
+              <label for="email1">Costo de Funcion 3D</label>
+              <input class="form-control" type="number" placeholder="Costo para entrar en la funcion 3D">              
+            </div>
+            <div class="form-group">
+              <label for="email1">Carga de caratula</label>
+              <input class="form-control" type="file" >              
+            </div>
+            <div class="form-group">
+              <label for="email1">Descripción de la película</label>
+              <textarea class="form-control" type="textarea" placeholder="Ingrese la descripción o sinopsis de la película" rows="10" ></textarea>
+            </div> 
+          </div>
+          <div class="modal-footer border-top-0 d-flex justify-content-center">
+            <button type="submit" class="btn btn-danger">Cancelar</button>
+            <button type="submit" class="btn btn-success">Crear película</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--modal de edicion de películas-->
+  <div class="modal fade" id="PanelEdicionPeliculas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+          <h5 class="modal-title" id="PanelCreacionUsuarios">Panel de edición de películas</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <label for="email1">Nombre de la película</label>
+              <div class="input-group">
+              <input class="form-control" type="text" placeholder="Nombre de la película a agregar">              
+              <span class="input-group-btn">
+                <button class="btn btn-default glyphicon glyphicon-search" type="button"></button>
+              </span> 
+            </div>
+            <div class="form-group">
+              <label for="email1">Funcion 1</label>
+              <input class="form-control" type="datetime-local">              
+            </div>
+            <div class="form-group">
+              <label for="email1">Funcion 2</label>
+              <input class="form-control" type="datetime-local">              
+            </div>
+            <div class="form-group">
+              <label for="email1">Funcion 3</label>
+              <input class="form-control" type="datetime-local">              
+            </div>
+            <div class="form-group">
+              <label for="email1">Costo de Funcion 2D</label>
+              <input class="form-control" type="number" placeholder="Costo para entrar en la funcion 2D">              
+            </div>
+            <div class="form-group">
+              <label for="email1">Costo de Funcion 3D</label>
+              <input class="form-control" type="number" placeholder="Costo para entrar en la funcion 3D">              
+            </div>
+            <div class="form-group">
+              <label for="email1">Carga de caratula</label>
+              <input class="form-control" type="file" >              
+            </div>
+            <div class="form-group">
+              <label for="email1">Descripción de la película</label>
+              <textarea class="form-control" type="textarea" placeholder="Ingrese la descripción o sinopsis de la película" rows="10" ></textarea>
+            </div> 
+          </div>
+          <div class="modal-footer border-top-0 d-flex justify-content-center">
+            <button type="submit" class="btn btn-danger">Cancelar</button>
+            <button type="submit" class="btn btn-success">Editar película</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!--modal de eliminacion de películas-->
+  <div class="modal fade" id="PanelEliminarPeliculas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+          <h5 class="modal-title" id="PanelCreacionUsuarios">Panel de eliminación de películas</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <label for="email1">Nombre de la película</label>
+              <div class="input-group">
+              <input class="form-control" type="text" placeholder="Nombre de la película a agregar">              
+              <span class="input-group-btn">
+                <button class="btn btn-default glyphicon glyphicon-search" type="button"></button>
+              </span> 
+            </div>
+            <div class="form-group">
+              <label for="email1">Funcion 1</label>
+              <input class="form-control" type="datetime-local" readonly>              
+            </div>
+            <div class="form-group">
+              <label for="email1">Funcion 2</label>
+              <input class="form-control" type="datetime-local" readonly>              
+            </div>
+            <div class="form-group">
+              <label for="email1">Funcion 3</label>
+              <input class="form-control" type="datetime-local" readonly>              
+            </div>
+            <div class="form-group">
+              <label for="email1">Descripción de la película</label>
+              <textarea class="form-control" type="textarea" placeholder="Ingrese la descripción o sinopsis de la película" rows="10" readonly></textarea>
+            </div> 
+          </div>
+          <div class="modal-footer border-top-0 d-flex justify-content-center">
+            <button type="submit" class="btn btn-danger">Cancelar</button>
+            <button type="submit" class="btn btn-success">Eliminar película</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+   <!--modal de confirmacion de cerrar sesion-->
+   <div class="modal fade" id="ConfirmacionCerrarSesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+          <h5 class="modal-title" id="exampleModalLabel">Seguro que desea Cerrar sesión?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+          <div class="modal-footer border-top-0 d-flex justify-content-center">
+            <button type="submit" class="btn btn-danger">Cancelar</button>
+            <button type="submit" class="btn btn-success">Confirmar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</body>
+ 
+</html>
