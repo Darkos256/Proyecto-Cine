@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/usuario.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/normalize.css') }}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <title>Mi Cuenta</title>
+</head>
+<header>
+    <a href="/" class="enlace">
+        <img src="{{ url_for('static', filename='assets/Logo CineColombia.png') }}" alt="" class="logo">
+    </a>
+    <div class="menu-header">
+        <div class="buscador">
+            <input class="buscar" type="text" placeholder="Buscar en Cine Colombia" required>
+            <div class="btn-buscar">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar-righ">
+        <div class="hamburger-menu">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div> 
+            <div class="line line-3"></div>                                     
+        </div>
+        <ul class="nav-list">
+            <li  class="nav-item">
+                <a href="/cartelera" class="nav-link">Cartelera</a>
+            </li>
+            <li  class="nav-item">
+                <a href="/funciones" class="nav-link">Funciones</a>
+            </li>
+            <li  class="nav-item">
+            <a href="#" class="nav-link">Peliculas</a>
+            </li>
+        </ul>
+    </nav>
+    <nav class="navbar-left">
+        <div class="hamburger-menu2">
+            <i class="fas fa-user"></i>                               
+        </div>
+            <div class="btn-user">
+                <button class="btn-login" type="submit"><span class="fas fa-user"></span>Acceder</button>
+                <button class="btn-register" type="submit"><span class="fas fa-user-plus"></span>Registrate</button>
+            </div>
+        </ul>
+    </nav>
+</header>
+<body>
+    <section class="seccion-perfil-usuario">
+        <div class="perfil-usuario-header">
+            <div class="perfil-usuario-portada">
+                <div class="perfil-usuario-avatar">
+                    <img src="../static/assets/-zBHK9cF_400x400.jpg" alt="img-avatar">
+                    <button type="button" class="boton-avatar">
+                        <i class="far fa-image"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="perfil-usuario-body">
+            <div class="perfil-usuario-bio">
+                <h3 class="titulo">Nombre de usuario</h3>
+                <p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="perfil-usuario-footer">
+                <ul class="lista-datos">
+                    <li><i class=""></i> Compras</li>
+                    <li><i class=""></i> Direccion</li>
+                    <li><i class=""></i> Telefono</li>
+                    <li><i class=""></i> Fecha nacimiento</li>
+                </ul>
+                <ul class="lista-datos">
+                    <li><i class=""></i> Correo</li>
+                    <li><i class=""></i> Cambiar contraseña</li>
+                    <li><i class=""></i> Genero</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+<script type="text/javascript" src="{{ url_for('static', filename='js/header.js') }}"></script>
+</body>
+</html>
