@@ -12,7 +12,49 @@
 	<link rel="stylesheet" href="{{ url_for('static', filename='styles/responsive.css') }}">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<script src="js/validacionRegistro.js.js"></script>
 	<title>Registro</title>
+
+	<script>
+		function verificar() {
+			
+			email1 = document.PruebaFormulario.email1.value
+			email2 = document.PruebaFormulario.email2.value
+			contrasena = document.PruebaFormulario.password.value
+			error1 = null
+			error2 = null
+ 
+    // Verificamos si las constraseñas no coinciden 
+    if (email1 != email2) {
+         
+		error1 = true
+		
+	}
+	if(contrasena.length  < 6 || contrasena.length  > 12){
+		error2 = true
+	}
+
+	if(error1 == true){
+		// Si los correos no coinciden mostramos un mensaje
+		alert("Los correos NO son iguales \nPor Favor ingrese el mismo correo de verificación")
+
+	}
+	else if(error2 == true){
+		// Si la contraseña no tiene mas de 6 caracteres y menos de 12 es invalida
+		alert("Contraseña Invalida\n Una contraseña valida debe tener mas de 6 caracteres y menos de 12...") 
+
+	}
+	else {
+
+		// Si las contraseñas son validas y los correos correctos coinciden mostramos un mensaje
+		alert("Validaciones exitosas \nCargando pagina...") 
+
+        
+    }
+
+		}
+		</script>
+
 </head>
 <body>
 	<img class="wave" src="{{ url_for('static', filename='assets/wave.png') }}">
@@ -21,7 +63,7 @@
 			<img src="{{ url_for('static', filename='assets/cinta.png') }}">
 		</div>
 		<div class="login-content">
-			<form action="" method="POST" class="formulario" id="formulario">
+			<form onsubmit="verificar(); return false" method="POST" class="formulario" id="formulario" name="PruebaFormulario">
 				<h1 class="title">Registro</h1>
 
 				<div class="input-div one">
@@ -32,48 +74,9 @@
                         <input type="text" name="nombre" id="nombre" class="input" required>
                     </div>
                 </div>
-<!--
-				<div class="formulario__grupo" id="grupo__nombre">
-					<label for="nombre" class="formulario__label">Nombre</label>
-					<div class="formulario__grupo-input">
-						<input type="text" class="formulario__input" name="nombre" id="nombre">
-						<i class="formulario__validacion-estado fas fa-times-circle"></i>
-					</div>
-					<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
-				</div>
 
-				 Grupo: Correo Electronico 
-				<div class="formulario__grupo" id="grupo__correo">
-					<label for="correo" class="formulario__label">Correo Electrónico</label>
-					<div class="formulario__grupo-input">
-						<input type="email" class="formulario__input" name="correo" id="correo">
-						<i class="formulario__validacion-estado fas fa-times-circle"></i>
-					</div>
-					<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
-				</div>
 
-				 Grupo: Contraseña 
-				<div class="formulario__grupo" id="grupo__password">
-					<label for="password" class="formulario__label">Contraseña</label>
-					<div class="formulario__grupo-input">
-						<input type="password" class="formulario__input" name="password" id="password">
-						<i class="formulario__validacion-estado fas fa-times-circle"></i>
-					</div>
-					<button id="show_password" class="btn-primary" type="button" onclick="ShowHidePassword()"> <span class="fas fa-eye-slash icon"></span> </button>
-					<p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
-				</div>
 
-				Grupo: Contraseña 2 
-				<div class="formulario__grupo" id="grupo__password2">
-					<label for="password2" class="formulario__label">Repetir Contraseña</label>
-					<div class="formulario__grupo-input">
-						<input type="password" class="formulario__input" name="password2" id="password2">
-						<i class="formulario__validacion-estado fas fa-times-circle"></i>
-					</div>
-					<p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
-				</div>
-				
--->
                 <div class="input-div one">
                     <div class="i">
                     </div>
@@ -87,7 +90,7 @@
                     </div>
                     <div class="div">
                         <h5>Correo electronico*</h5>
-                        <input type="email" name="email" id="email" class="input"  required>
+                        <input type="email" name="email" id="email1" class="input"  required>
                     </div>
                  </div>
                  <div class="input-div one">
@@ -95,7 +98,7 @@
                     </div>
                     <div class="div">
                         <h5>Confirmar correo electronico*</h5>
-                        <input type="email" name="confirmar-email" id="confirmar-email" class="input" required>
+                        <input type="email" name="confirmar-email" id="email2" class="input" required>
                     </div>
                 </div>
            		<div class="input-div pass">
@@ -108,24 +111,10 @@
 				   <button id="show_password" class="btn-primary" type="button" onclick="ShowHidePassword()"> <span class="fas fa-eye-slash icon"></span> </button>
             	</div>
             	<a href="/login">Ya tengo cuenta!</a>
-                <p><input type="checkbox" name="conditions">He leido y acepto todos los terminos y condiciones.</p>
+                <p><input type="checkbox" name="conditions" required>He leido y acepto todos los terminos y condiciones.</p>
   				<!--<input type="submit" class="btn" value="Registrarse">-->
-				<button class="btn" type="submit">Registrarse</button>
-				<!--<div class="formulario__grupo" id="grupo__terminos">
-					<label class="formulario__label">
-						<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
-						Acepto los Terminos y Condiciones
-					</label>
-				</div>
-	
-				<div class="formulario__mensaje" id="formulario__mensaje">
-					<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
-				</div>
-	
-				<div class="formulario__grupo formulario__grupo-btn-enviar">
-					<button type="submit" class="formulario__btn">Enviar</button>
-					<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
-				</div>-->
+				<button class="btn" onClick="comprobarClave()">Registrarse</button>
+
             </form>
         </div>
     </div>
