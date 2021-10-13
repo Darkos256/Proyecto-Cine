@@ -1,0 +1,278 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    font-family: 'Dosis', sans-serif;
+    top: 75px;
+}
+
+header{
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    background: black;
+    height: 86px;
+    width: 100%;
+}
+
+.enlace{
+    position: absolute;
+    left: 12%;
+    top: 18px;
+    padding-left: 192px;
+    padding-top: 45px;
+}
+
+.logo{
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    height: 50px;
+}
+
+header .menu-header{
+    float: right;
+    margin-right: 20px;
+}
+
+header .menu-header{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+.buscador{
+    position: absolute;
+    top: 12.5px;
+    left: 35%;
+}
+.buscar{
+    position: absolute;
+    top: 7.5px;
+    height: 40px;
+    width: 390px;
+    padding: 0px 20px;
+    font-size: 14px;
+    color: white;
+    outline: none;
+    border: 1px solid white;
+    border-radius: 8px;
+    background-color: rgb(78, 78, 78);
+}
+
+
+.buscar:hover{
+    cursor: pointer;
+}
+
+.btn-buscar{
+    position: absolute;
+    top: 0px;
+    left: 342px;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    background: transparent;
+    text-align: center;
+    color: white;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.btn-buscar:hover{
+    background: none;
+}
+
+span.fas.fa-user {
+    padding-right: 10px;
+}
+
+span.fas.fa-user-plus{
+    padding-right: 10px;
+}
+
+/*------------------------righ-----------------------------*/
+
+.navbar-righ{
+    width: 200px;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+    top: 86px;
+    left: -300px;
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    transition: all .6s cubic-bezier(1, 0, 0, 1);
+}
+
+.change-righ{
+    left: 0;
+}
+
+.nav-list{
+    text-align: left;
+}
+
+.nav-item{
+    list-style: none;
+    margin: 10px;
+
+}
+
+.nav-link{
+    text-decoration: none;
+    font-size: 22px;
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+    padding: 0px 0;
+    top: 0;
+}
+
+.nav-link::before,
+.nav-link::after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #d4af37;
+    position: absolute;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+
+.nav-link::after{
+    bottom: 0;
+    transform-origin: right;
+}
+
+.nav-link::before{
+    top: 0;
+    transform-origin: left;
+}
+
+.nav-link:hover::before,
+.nav-link:hover::after{
+    transform: scaleX(1);
+}
+
+.hamburger-menu{
+    width: 35px;
+    height: 30px;
+    background-color: black;
+    position: fixed;
+    top: 25px;
+    left: 2%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.line{
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: all .4s;
+}
+
+.change-righ .line-1{
+    transform: rotate(-45deg) translate(-8px, 6px);
+    background-color: #d4af37;
+}
+
+.change-righ .line-2{
+    opacity: 0;
+}
+.change-righ .line-3{
+    transform: rotate(45deg) translate(-8px, -6px);
+    background-color: #d4af37;
+}
+
+/*------------------------left-----------------------------*/
+
+.navbar-left {
+    width: 200px;
+    height: 14%;
+    background-color: black;
+    position: fixed;
+    top: 86px;
+    right: -300px;
+    display: flex;
+    justify-content: right;
+    align-items: flex-start;
+    transition: all .6s cubic-bezier(1, 0, 0, 1);
+    border-radius: 0 0 0 35px;
+}
+
+.change-left{
+    right: 0px;
+}
+
+.hamburger-menu2 {
+    width: 40px;
+    height: 38px;
+    background-color: white;
+    position: fixed;
+    border-radius: 50px;
+    top: 25px;
+    right: 2%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: all .4s;
+}
+
+header .btn-user .btn-login{
+    color: white;
+    background-color: #0404e2;
+    font-size: 18px;
+    padding: 5px 20px;
+    border-radius: 50px;
+    border: none;
+    margin: 3px;
+    align-items: center;
+    position: absolute;
+    left: 20%;
+    top: 2%;
+}
+
+header .btn-user .btn-register{
+    color: white;
+    background-color: #0404e2;
+    font-size: 18px;
+    padding: 5px 20px;
+    border-radius: 50px;
+    border: none;
+    margin: 3px;
+    align-items: center;
+    position: absolute;
+    left: 16%;
+    top: 47%;
+}
+
+i.fas.fa-user {
+    position: absolute;
+    color: black;
+    left: 14px;
+}
+
+.change-left .hamburger-menu2{
+    background-color: #d4af37;
+}
+
+header .btn-user .btn-login:hover{
+    color: #0404e2;
+    background-color: white;
+
+}
+
+header .btn-user .btn-register:hover{
+    color: #0404e2;
+    background-color: white;
+}
