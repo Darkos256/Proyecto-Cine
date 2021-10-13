@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/busqueda.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/normalize.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <title>Sin Tiempo para Morir</title>
+</head>
+<header>
+    <a href="/" class="enlace">
+        <img src="{{ url_for('static', filename='assets/Logo CineColombia.png') }}" alt="" class="logo">
+    </a>
+    <div class="menu-header">
+        <div class="buscador">
+            <input class="buscar" type="text" placeholder="Buscar en Cine Colombia" required>
+            <div class="btn-buscar">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar-righ">
+        <div class="hamburger-menu">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div> 
+            <div class="line line-3"></div>                                     
+        </div>
+        <ul class="nav-list">
+            <li  class="nav-item">
+                <a href="/cartelera" class="nav-link">Cartelera</a>
+            </li>
+            <li  class="nav-item">
+                <a href="/funciones" class="nav-link">Funciones</a>
+            </li>
+            <li  class="nav-item">
+            <a href="#" class="nav-link">Peliculas</a>
+            </li>
+        </ul>
+    </nav>
+    <nav class="navbar-left">
+        <div class="hamburger-menu2">
+            <i class="fas fa-user"></i>                               
+        </div>
+            <div class="btn-user">
+                <button class="btn-login" type="submit" onclick="location.href='/login';"><span class="fas fa-user"></span>Acceder</button>
+                <button class="btn-register" type="submit" onclick="location.href='/register';"><span class="fas fa-user-plus"></span>Registrate</button>
+            </div>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div class="contenedor">
+        <div class="poster">
+            <img src="{{ url_for('static', filename='assets/poster2.jpg') }}" alt="">
+        </div>        
+        <div class="description">
+            <p class="tiltle">Sin Tiempo para Morir</p>
+            <p class="title-english">Titulo en ingles: No Time to Die</p>
+            <p class="release-date">Estreno: 30-Sept-2021</p>
+            <p class="gender">Género: Acción</p>
+            <p class="PG">Recomendada para mayores de 12 años</p>
+            <p class="duration">163 min</p>
+        </div>
+        <div class="trailer">
+            <iframe src="https://www.youtube.com/embed/HsQDZAKTqF4"></iframe>
+        </div>
+    </div>
+    <div class="contenedor2">
+       
+        <div class="description2">
+            <p class="sinopsi">En Sin Tiempo Para Morir, Bond ha dejado el servicio activo y disfruta de una vida tranquila en Jamaica. Su paz es efímera cuando su viejo amigo Félix Leiter de la CIA aparece pidiendo ayuda. La misión de rescatar a un científico secuestrado resulta ser mucho más traicionera de lo esperado, llevando a Bond a la pista de un misterioso villano armado con nueva tecnología peligrosa.</p>
+    
+            <p class="titulo">Titulo Original:</p>
+                <p class="texto">No Time to Die</p>
+            <p class="titulo">Pais de Origen</p>
+                <p class="texto">United Kingdom, United States of America</p>
+            <p class="titulo">Director</p>
+                <p class="texto">Cary Joji Fukunaga</p>
+            <p class="titulo">Actores</p>
+                <p class="texto">Daniel Craig, Ralph Fiennes, Naomie Harris, Rory Kinnear, Léa Seydoux, Ben Whishaw, Jeffrey Wright, Ana de Armas, Dali Benssalah, David Dencik, Lashana Lynch, Billy Magnussen y Rami Malek.</p>
+        </div>
+
+       <div class="movie-box3">
+            <div class="movie-box3-1">
+                <div class="title-hours">
+                    <h2>Cine Colombia</h2>
+                </div>
+                <div class="movie-hours">
+                    <h3>Horarios</h3>
+                </div>
+                
+                <div class = "daily-functions">
+                    <div class="daily">
+                        <h4>MAR
+                            <P class="day">12-oct</p>
+                        </h4>
+                        
+                    </div>
+                    <div class="daily">
+                        <h4> MIE 
+                            <P class="day">13-oct</p>
+                        </h4>
+                    </div>
+                    <div class="daily">
+                        <h4>JUE
+                            <P class="day">14-oct</p>
+                        </h4>
+                    </div>
+                    <div class="daily">
+                        <h4>VIE
+                            <P class="day">15-oct</p>
+                        </h4>
+                    </div>
+                    <div class="daily">
+                        <h4>SAB
+                            <P class="day">16-oct</p>
+                        </h4>
+                    </div>
+
+                </div> <!-- fin de los dias de las funciones, barra -->
+                <div class="show-time-2d">
+                    <div class="hours-2d">
+                        <h2>2D</h2>
+                    </div>
+                    <div class="hours-btn">
+                        <button class="btn" id="btn-3-d2">3:00pm</button>
+                        <button class="btn" id="btn-5-d2">5:00pm</button>
+                        <button class="btn" id="btn-7-d2">7:00pm</button>
+                        <button class="btn" id="btn-9-2d">9:00pm</button>
+                    </div>
+                    
+                </div>
+                <div class="show-time-3d">
+                    <div class="hours-3d">
+                        <h2>3D</h2>
+                    </div>
+                    <div class="hours-btn">
+                        <button class="btn" id="btn-3-3d">3:00pm</button>
+                        <button class="btn" id="btn-5-3d">5:00pm</button>
+                        <button class="btn" id="btn-7-3d">7:00pm</button>
+                        <button class="btn" id="btn-9-3d">9:00pm</button>                        
+                    </div>
+                </div>
+            </div> <!-- fin caja 3-1 barra-funciones y horas -->
+    </div>
+<script type="text/javascript" src="{{ url_for('static', filename='js/header.js') }}"></script>
+</body>
+</html>
