@@ -120,31 +120,27 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form>
+        <form action="{{url_for('guardar_usuario')}}" method="post">
           <div class="modal-body">
             <div class="form-group">
               <label for="email1">Nombre completo del usuario</label>
-              <input class="form-control" type="text" placeholder="Nombre del usuario">              
+              <input class="form-control" type="text" name="nombreCreacion" placeholder="Nombre del usuario">              
             </div>
             <div class="form-group">
-              <label for="email1">Cedula</label>
-              <input class="form-control" type="text" placeholder="Cedula del usuario">              
-            </div>
-            <div class="form-group">
-              <label for="email1">Usuario en el portal</label>
-              <input class="form-control" type="text" placeholder="Usuario con el que accedera a la aplicación">              
+              <label for="email1">Correo Electronico</label>
+              <input class="form-control" type="text" name="correoCreacion" placeholder="Correo electronico del usuario">              
             </div>
             <div class="form-group">
               <label for="password1">Contraseña</label>
-              <input type="password" class="form-control" id="password1" placeholder="Contraseña de acceso">
+              <input type="password" name="contrasena1Creacion" class="form-control" placeholder="Contraseña de acceso">
             </div>
             <div class="form-group">
               <label for="password1">Confirmar Contraseña</label>
-              <input type="password" class="form-control" id="password2" placeholder="Confirma la contraseña de acceso">
+              <input type="password" name="contrasena2Creacion" class="form-control" placeholder="Confirma la contraseña de acceso">
             </div>
           </div>
           <div class="modal-footer border-top-0 d-flex justify-content-center">
-            <button type="submit" class="btn btn-danger">Cancelar</button>
+            <button type="" class="btn btn-danger">Cancelar</button>
             <button type="submit" class="btn btn-success">Crear usuario</button>
           </div>
         </form>
@@ -180,12 +176,8 @@
 
             </div>
             <div class="form-group">
-              <label for="email1">Cedula</label>
-              <input class="form-control" type="text" placeholder="Cedula del usuario">              
-            </div>
-            <div class="form-group">
-              <label for="email1">Usuario en el portal</label>
-              <input class="form-control" type="text" placeholder="Usuario con el que accedera a la aplicación">              
+              <label for="email1">Correo Electronico</label>
+              <input class="form-control" type="text" placeholder="Correo electronico del usuario">              
             </div>
             <div class="form-group">
               <label for="password1">Contraseña</label>
@@ -227,9 +219,9 @@
         </div>
         <form>
           <div class="modal-body">
-            <label for="email1">Cedula</label>
+            <label for="email1">Correo electronico</label>
             <div class="input-group">
-              <input class="form-control" type="text" placeholder="Cedula del usuario">
+              <input class="form-control" type="text" placeholder="Correo del usuario">
               <span class="input-group-btn">
                 <button class="btn btn-default glyphicon glyphicon-search" type="button"></button>
               </span>              
@@ -238,10 +230,6 @@
             <div class="form-group">
               <label for="email1">Nombre completo del usuario</label>
               <input class="form-control" type="text" placeholder="Nombre del usuario" readonly>              
-            </div>
-            <div class="form-group">
-              <label for="email1">Usuario en el portal</label>
-              <input class="form-control" type="text" placeholder="Usuario con el que accedera a la aplicación" readonly>              
             </div>
           </div>
           <div class="modal-footer border-top-0 d-flex justify-content-center">
