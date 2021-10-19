@@ -20,7 +20,17 @@
     </head>
 
 <body>
-    
+    <!--alerts pendientes-->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success">
+                  {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <!--fin alerts pendientes-->
     
     <h1>Bienvenido al panel</h1>
     <h1>de Administración</h1>
@@ -32,7 +42,7 @@
         <ul class="box-item-content">
             
             <li type="button" data-toggle="modal" data-target="#ConfiguracionCuenta">Configuración de la cuenta</li> 
-            <li type="button" data-toggle="modal" data-target="principalAdmin.html">Pantalla de Inicio</li> 
+            <li type="button" data-toggle="modal" data-target="#ConfirmacionPrincipalusers">Pantalla de Inicio</li> 
             
         </ul>
     </div>
@@ -96,7 +106,7 @@
             </div>
           </div>
           <div class="modal-footer border-top-0 d-flex justify-content-center">
-            <button type="submit" class="btn btn-danger">Cancelar</button>
+            <span class="button btn btn-danger" data-dismiss="modal" aria-label="Close">Cancelar</span>
             <button type="submit" class="btn btn-success">Cambiar contraseña</button>
           </div>
         </form>
@@ -105,6 +115,29 @@
   </div>
 
 
+
+
+
+
+  <!--modal de confirmacion de ir a inicio-->
+  <div class="modal fade" id="ConfirmacionPrincipalusers" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+          <h5 class="modal-title" id="exampleModalLabel">Seguro que desea ir a la pagina principal de usuarios?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form name="formRegistroUsuario" method="post" action="{{ url_for('inicioUser')}}">
+          <div class="modal-footer border-top-0 d-flex justify-content-center">
+            <span class="button btn btn-danger" data-dismiss="modal" aria-label="Close">Cancelar</span>
+            <button type="submit" class="btn btn-success">Confirmar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -120,7 +153,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="{{url_for('guardar_usuario')}}" method="post">
+        <form name="formRegistroUsuario" method="post" action="{{ url_for('registro_usuario')}}">
           <div class="modal-body">
             <div class="form-group">
               <label for="email1">Nombre completo del usuario</label>
@@ -128,7 +161,7 @@
             </div>
             <div class="form-group">
               <label for="email1">Correo Electronico</label>
-              <input class="form-control" type="text" name="correoCreacion" placeholder="Correo electronico del usuario">              
+              <input class="form-control" type="email" name="correoCreacion" placeholder="Correo electronico del usuario">              
             </div>
             <div class="form-group">
               <label for="password1">Contraseña</label>
@@ -140,7 +173,7 @@
             </div>
           </div>
           <div class="modal-footer border-top-0 d-flex justify-content-center">
-            <button type="" class="btn btn-danger">Cancelar</button>
+            <span class="button btn btn-danger" data-dismiss="modal" aria-label="Close">Cancelar</span>
             <button type="submit" class="btn btn-success">Crear usuario</button>
           </div>
         </form>
@@ -165,31 +198,31 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form>
+        <form name="formRegistroUsuario" method="post" action="{{ url_for('actualizar_usuario')}}">
           <div class="modal-body">
-            <label for="email1">Nombre completo del usuario</label>
+            <label for="email1">Correo Electronico</label>
             <div class="input-group">
-              <input class="form-control" type="text" placeholder="Nombre del usuario">
+              <input class="form-control" type="email" name="correoActualizar" placeholder="Correo electronico del usuario">
               <span class="input-group-btn">
                 <button class="btn btn-default glyphicon glyphicon-search" type="button"></button>
               </span>              
 
             </div>
             <div class="form-group">
-              <label for="email1">Correo Electronico</label>
-              <input class="form-control" type="text" placeholder="Correo electronico del usuario">              
+              <label for="email1">Nombre completo del usuario</label>
+              <input class="form-control" type="text" name="nombreActualizar" placeholder="Nombre del usuario">              
             </div>
             <div class="form-group">
               <label for="password1">Contraseña</label>
-              <input type="password" class="form-control" id="password1" placeholder="Contraseña de acceso">
+              <input type="password" class="form-control" name="contrasenaActualizar" placeholder="Contraseña de acceso">
             </div>
             <div class="form-group">
               <label for="password1">Confirmar Contraseña</label>
-              <input type="password" class="form-control" id="password2" placeholder="Confirma la contraseña de acceso">
+              <input type="password" class="form-control" placeholder="Confirma la contraseña de acceso">
             </div>
           </div>
           <div class="modal-footer border-top-0 d-flex justify-content-center">
-            <button type="submit" class="btn btn-danger">Cancelar</button>
+            <span class="button btn btn-danger" data-dismiss="modal" aria-label="Close">Cancelar</span>
             <button type="submit" class="btn btn-success">Editar usuario</button>
           </div>
         </form>
@@ -217,11 +250,11 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form>
+        <form name="formRegistroUsuario" method="post" action="{{ url_for('eliminar_usuario')}}">
           <div class="modal-body">
             <label for="email1">Correo electronico</label>
             <div class="input-group">
-              <input class="form-control" type="text" placeholder="Correo del usuario">
+              <input class="form-control" type="email" name="correoEliminacion" placeholder="Correo del usuario">
               <span class="input-group-btn">
                 <button class="btn btn-default glyphicon glyphicon-search" type="button"></button>
               </span>              
@@ -233,7 +266,7 @@
             </div>
           </div>
           <div class="modal-footer border-top-0 d-flex justify-content-center">
-            <button type="submit" class="btn btn-danger">Cancelar</button>
+            <span class="button btn btn-danger" data-dismiss="modal" aria-label="Close">Cancelar</span>
             <button type="submit" class="btn btn-success">Eliminiar Usuario</button>
           </div>
         </form>
@@ -262,43 +295,43 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form>
+        <form name="formRegistroUsuario" method="post" action="{{ url_for('registro_pelicula')}}">
           <div class="modal-body">
             <div class="form-group">
               <label for="email1">Nombre de la película</label>
-              <input class="form-control" type="text" placeholder="Nombre de la película a agregar">              
+              <input class="form-control" type="text" name="nombrePelicula" placeholder="Nombre de la película a agregar">              
             </div>
             <div class="form-group">
               <label for="email1">Funcion 1</label>
-              <input class="form-control" type="datetime-local">              
+              <input class="form-control" name="funcion1" type="datetime-local">              
             </div>
             <div class="form-group">
               <label for="email1">Funcion 2</label>
-              <input class="form-control" type="datetime-local">              
+              <input class="form-control" name="funcion2" type="datetime-local">              
             </div>
             <div class="form-group">
               <label for="email1">Funcion 3</label>
-              <input class="form-control" type="datetime-local">              
+              <input class="form-control" name="funcion3" type="datetime-local">              
             </div>
             <div class="form-group">
               <label for="email1">Costo de Funcion 2D</label>
-              <input class="form-control" type="number" placeholder="Costo para entrar en la funcion 2D">              
+              <input class="form-control" name="costo2d" type="number" placeholder="Costo para entrar en la funcion 2D">              
             </div>
             <div class="form-group">
               <label for="email1">Costo de Funcion 3D</label>
-              <input class="form-control" type="number" placeholder="Costo para entrar en la funcion 3D">              
+              <input class="form-control" name="costo3d" type="number" placeholder="Costo para entrar en la funcion 3D">              
             </div>
             <div class="form-group">
               <label for="email1">Carga de caratula</label>
-              <input class="form-control" type="file" >              
+              <input class="form-control" name="caratula"  type="file">   <!--type="text"-->           
             </div>
             <div class="form-group">
               <label for="email1">Descripción de la película</label>
-              <textarea class="form-control" type="textarea" placeholder="Ingrese la descripción o sinopsis de la película" rows="10" ></textarea>
+              <textarea class="form-control" type="textarea" name="descripcion" placeholder="Ingrese la descripción o sinopsis de la película" rows="10" ></textarea>
             </div> 
           </div>
           <div class="modal-footer border-top-0 d-flex justify-content-center">
-            <button type="submit" class="btn btn-danger">Cancelar</button>
+            <span class="button btn btn-danger" data-dismiss="modal" aria-label="Close">Cancelar</span>
             <button type="submit" class="btn btn-success">Crear película</button>
           </div>
         </form>
@@ -331,46 +364,46 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form>
+        <form name="formRegistroUsuario" method="post" action="{{ url_for('actualizar_pelicula')}}">
           <div class="modal-body">
             <label for="email1">Nombre de la película</label>
               <div class="input-group">
-              <input class="form-control" type="text" placeholder="Nombre de la película a agregar">              
+              <input class="form-control" type="text" name="editarNombrePelicula" placeholder="Nombre de la película a agregar">              
               <span class="input-group-btn">
                 <button class="btn btn-default glyphicon glyphicon-search" type="button"></button>
               </span> 
             </div>
             <div class="form-group">
               <label for="email1">Funcion 1</label>
-              <input class="form-control" type="datetime-local">              
+              <input class="form-control" name="editarFuncion1" type="datetime-local">              
             </div>
             <div class="form-group">
               <label for="email1">Funcion 2</label>
-              <input class="form-control" type="datetime-local">              
+              <input class="form-control"  name="editarFuncion2" type="datetime-local">              
             </div>
             <div class="form-group">
               <label for="email1">Funcion 3</label>
-              <input class="form-control" type="datetime-local">              
+              <input class="form-control" name="editarFuncion3" type="datetime-local">              
             </div>
             <div class="form-group">
               <label for="email1">Costo de Funcion 2D</label>
-              <input class="form-control" type="number" placeholder="Costo para entrar en la funcion 2D">              
+              <input class="form-control" type="number" name="editarCostoFuncion2d" placeholder="Costo para entrar en la funcion 2D">              
             </div>
             <div class="form-group">
               <label for="email1">Costo de Funcion 3D</label>
-              <input class="form-control" type="number" placeholder="Costo para entrar en la funcion 3D">              
+              <input class="form-control" type="number" name="editarCostoFuncion3d" placeholder="Costo para entrar en la funcion 3D">              
             </div>
             <div class="form-group">
               <label for="email1">Carga de caratula</label>
-              <input class="form-control" type="file" >              
+              <input class="form-control" type="file" name="editarCaratula">              
             </div>
             <div class="form-group">
               <label for="email1">Descripción de la película</label>
-              <textarea class="form-control" type="textarea" placeholder="Ingrese la descripción o sinopsis de la película" rows="10" ></textarea>
+              <textarea class="form-control" type="textarea" name="editarDescripcion" placeholder="Ingrese la descripción o sinopsis de la película" rows="10" ></textarea>
             </div> 
           </div>
           <div class="modal-footer border-top-0 d-flex justify-content-center">
-            <button type="submit" class="btn btn-danger">Cancelar</button>
+            <span class="button btn btn-danger" data-dismiss="modal" aria-label="Close">Cancelar</span>
             <button type="submit" class="btn btn-success">Editar película</button>
           </div>
         </form>
@@ -396,11 +429,11 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form>
+        <form name="formRegistroUsuario" method="post" action="{{ url_for('eliminar_pelicula')}}">
           <div class="modal-body">
             <label for="email1">Nombre de la película</label>
               <div class="input-group">
-              <input class="form-control" type="text" placeholder="Nombre de la película a agregar">              
+              <input class="form-control"  name="eliminar_pelicula" type="text" placeholder="Nombre de la película a agregar">              
               <span class="input-group-btn">
                 <button class="btn btn-default glyphicon glyphicon-search" type="button"></button>
               </span> 
@@ -423,7 +456,7 @@
             </div> 
           </div>
           <div class="modal-footer border-top-0 d-flex justify-content-center">
-            <button type="submit" class="btn btn-danger">Cancelar</button>
+            <span class="button btn btn-danger" data-dismiss="modal" aria-label="Close">Cancelar</span>
             <button type="submit" class="btn btn-success">Eliminar película</button>
           </div>
         </form>
@@ -450,7 +483,7 @@
         </div>
         <form>
           <div class="modal-footer border-top-0 d-flex justify-content-center">
-            <button type="submit" class="btn btn-danger">Cancelar</button>
+            <span class="button btn btn-danger" data-dismiss="modal" aria-label="Close">Cancelar</span>
             <button type="submit" class="btn btn-success">Confirmar</button>
           </div>
         </form>

@@ -21,7 +21,19 @@
 			<img src="{{ url_for('static', filename='assets/cinta.png') }}">
 		</div>
 		<div class="login-content">
-			<form onsubmit="verificar(); return false" method="POST" class="formulario" id="formulario" name="PruebaFormulario">
+			<!--alerts pendientes-->
+			<!-- {% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+					<div class="alert alert-success">
+					  {{message}}
+					</div>
+				{% endfor %}
+			{% endif %}
+			{% endwith %} -->
+		<!--fin alerts pendientes-->
+			<!-- <form onsubmit="verificar(); return false" method="POST" class="formulario" id="formulario" name="PruebaFormulario"> -->
+				<form class="login_form" action="{{ url_for('registro_usuarioPaginaUsuario')}}" method="POST"  name="form" >
 				<h1 class="title">Registro</h1>
 
 				<div class="input-div one">

@@ -1,3 +1,4 @@
+
 function verificar() {
 			
     email1 = document.PruebaFormulario.email1.value
@@ -28,6 +29,8 @@ function verificar() {
 
     // Si las contraseñas son validas y los correos correctos coinciden mostramos un mensaje
     else {
+
         alert("Validaciones exitosas \nCargando pagina...") 
+
     }
 }
