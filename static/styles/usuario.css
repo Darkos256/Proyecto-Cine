@@ -1,0 +1,520 @@
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    line-height: 1.4;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    color: #d4af37;
+    position: relative;
+    font-family: 'Dosis', sans-serif;
+    top: 75px;
+}
+
+.seccion-perfil-usuario .perfil-usuario-body,
+.seccion-perfil-usuario {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.25rem;
+}
+
+.seccion-perfil-usuario .perfil-usuario-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+}
+
+.seccion-perfil-usuario .perfil-usuario-portada {
+    display: block;
+    position: relative;
+    width: 90%;
+    height: 10rem;
+    border-radius: 0 0 20px 20px;
+}
+
+.seccion-perfil-usuario .perfil-usuario-portada .boton-portada {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border: 0;
+    border-radius: 8px;
+    padding: 12px 25px;
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+.seccion-perfil-usuario .perfil-usuario-body {
+    width: 70%;
+    position: relative;
+    max-width: 750px;
+}
+
+.seccion-perfil-usuario .perfil-usuario-body .titulo {
+    display: block;
+    width: 100%;
+    font-size: 1.75em;
+    margin-bottom: 0.5rem;
+}
+
+h3.titulo{
+    color: #404040;
+}
+
+.seccion-perfil-usuario .perfil-usuario-footer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    background-color: #fff;
+    border-radius: 15px;
+    width: 80%;
+    margin-bottom: 5%;
+}
+
+.seccion-perfil-usuario .perfil-usuario-bio {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    background-color: #fff;
+    border-radius: 15px;
+    width: 60%;
+}
+
+.seccion-perfil-usuario .perfil-usuario-bio {
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+.seccion-perfil-usuario .lista-datos {
+    width: 50%;
+    list-style: none;
+}
+
+.seccion-perfil-usuario .lista-datos li {
+    padding: 5px 0;
+    font-size: large;
+
+}
+
+.seccion-perfil-usuario .lista-datos a{
+    text-decoration: none;
+    color: #404040;;
+}
+
+.seccion-perfil-usuario .lista-datos p{
+    padding: 5px 0;
+    font-size: small;
+    color: #404040;
+
+}
+
+.seccion-perfil-usuario .lista-datos a:hover{
+    color: #d4af37;
+}
+
+.seccion-perfil-usuario .lista-datos .bto-editar{
+    margin-top: 5px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 16px;
+    cursor: pointer;
+    background: #0404E2;
+    color: white;
+    outline: none;
+    border: none;
+    transition: .2s;
+}
+
+.seccion-perfil-usuario .lista-datos .bto-editar:hover{
+    background: white;
+    color: #0404E2;
+    border: #0404E2 1px solid;
+    text-align: center;
+    align-items: center;
+}
+
+
+
+/*---------------------header------------------------------*/
+
+header{
+    font-family: 'Dosis', sans-serif;
+    z-index: 6;
+    position: fixed;
+    top: 0;
+    background: black;
+    height: 86px;
+    width: 100%;
+}
+
+.enlace{
+    position: absolute;
+    left: 12%;
+    top: 18px;
+    padding-left: 192px;
+    padding-top: 45px;
+}
+
+.logo{
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    height: 50px;
+}
+
+header .menu-header{
+    float: right;
+    margin-right: 20px;
+}
+
+header .menu-header{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+.buscador{
+    position: absolute;
+    top: 12.5px;
+    left: 35%;
+}
+
+.buscar{
+    position: absolute;
+    top: 7.5px;
+    height: 40px;
+    width: 390px;
+    padding: 0px 20px;
+    font-size: 14px;
+    color: white;
+    outline: none;
+    border: 1px solid white;
+    border-radius: 8px;
+    background-color: rgb(78, 78, 78);
+}
+
+.buscar:hover{
+    cursor: pointer;
+}
+
+.btn-buscar{
+    position: absolute;
+    top: 0px;
+    left: 342px;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    background: transparent;
+    text-align: center;
+    color: white;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.btn-buscar:hover{
+    background: none;
+}
+
+span.fas.fa-user {
+    padding-right: 10px;
+}
+
+span.fas.fa-user-plus{
+    padding-right: 10px;
+}
+
+/*------------------------left-----------------------------*/
+
+.navbar-righ{
+    width: 200px;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+    top: 86px;
+    left: -300px;
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    transition: all .6s cubic-bezier(1, 0, 0, 1);
+}
+
+.change-righ{
+    left: 0;
+}
+
+.nav-list{
+    text-align: left;
+}
+
+.nav-item{
+    list-style: none;
+    margin: 10px;
+
+}
+
+.nav-link{
+    text-decoration: none;
+    font-size: 22px;
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+    padding: 0px 0;
+    top: 0;
+}
+
+.nav-link::before,
+.nav-link::after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #d4af37;
+    position: absolute;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+
+.nav-link::after{
+    bottom: 0;
+    transform-origin: right;
+}
+
+.nav-link::before{
+    top: 0;
+    transform-origin: left;
+}
+
+.nav-link:hover::before,
+.nav-link:hover::after{
+    transform: scaleX(1);
+}
+
+.hamburger-menu{
+    width: 35px;
+    height: 30px;
+    background-color: black;
+    position: fixed;
+    top: 25px;
+    left: 2%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.line{
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: all .4s;
+}
+
+.change-righ .line-1{
+    transform: rotate(-45deg) translate(-8px, 6px);
+    background-color: #d4af37;
+}
+
+.change-righ .line-2{
+    opacity: 0;
+}
+
+.change-righ .line-3{
+    transform: rotate(45deg) translate(-8px, -6px);
+    background-color: #d4af37;
+}
+
+/*------------------------right-----------------------------*/
+
+.navbar-left {
+    width: 200px;
+    height: 14%;
+    background-color: black;
+    position: fixed;
+    top: 86px;
+    right: -300px;
+    display: flex;
+    justify-content: right;
+    align-items: flex-start;
+    transition: all .6s cubic-bezier(1, 0, 0, 1);
+    border-radius: 0 0 0 35px;
+}
+
+.change-left{
+    right: 0px;
+}
+
+.hamburger-menu2 {
+    width: 40px;
+    height: 38px;
+    background-color: white;
+    position: fixed;
+    border-radius: 50px;
+    top: 25px;
+    right: 2%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: all .4s;
+}
+
+header .btn-user .btn-login{
+    color: white;
+    background-color: #0404e2;
+    font-size: 18px;
+    padding: 5px 20px;
+    border-radius: 50px;
+    border: none;
+    margin: 3px;
+    align-items: center;
+    position: absolute;
+    left: 20%;
+    top: 2%;
+    cursor: pointer;
+}
+
+header .btn-user .btn-register{
+    color: white;
+    background-color: #0404e2;
+    font-size: 18px;
+    padding: 5px 20px;
+    border-radius: 50px;
+    border: none;
+    margin: 3px;
+    align-items: center;
+    position: absolute;
+    left: 16%;
+    top: 47%;
+    cursor: pointer;
+}
+
+i.fas.fa-user {
+    position: absolute;
+    color: black;
+    left: 14px;
+}
+
+.change-left .hamburger-menu2{
+    background-color: #d4af37;
+}
+
+header .btn-user .btn-login:hover{
+    color: #0404e2;
+    background-color: white;
+
+}
+
+header .btn-user .btn-register:hover{
+    color: #0404e2;
+    background-color: white;
+}
+
+/*----------------------footer------------------------*/
+
+footer{
+    font-family: 'Dosis', sans-serif;
+    position: absolute;
+    background: black;
+    height: auto;
+    width: 100%;
+    padding-top: 20px;
+    color: white;
+}
+
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content .logo-footer{
+    padding-top: 10px;
+    width: 18%;
+    padding-bottom: 10px;
+
+}
+
+.footer-content .logo-uninorte{
+    position: absolute;
+    width: 6%;
+    left: 5%;
+    top: 25%;
+
+}
+
+.footer-content .logo-misiontic{
+    position: absolute;
+    width: 5%;
+    right: 5%;
+    top: 35.5%;
+
+}
+
+.links{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+
+.links li{
+    margin: 0 10px;
+}
+
+.links a{
+    text-decoration: none;
+    color: white;
+}
+
+.links a span{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+    font-weight: 200;
+    text-align: center;
+}
+
+.links a:hover span{
+    color: #0404e2;
+}
+
+.footer-bottom{
+    background: rgb(10, 10, 10);
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+
