@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/busqueda.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/responsive.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <title>El Último Duelo</title>
+</head>
+<header>
+    <a href="{{url_for('index')}}" class="enlace">
+        <img src="{{ url_for('static', filename='assets/Logo CineColombia.png') }}" alt="" class="logo">
+    </a>
+    <div class="menu-header">
+        <div class="buscador">
+            <input class="buscar" type="text" placeholder="Buscar en Cine Colombia" required>
+            <div class="btn-buscar">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar-righ">
+        <div class="hamburger-menu">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div> 
+            <div class="line line-3"></div>                                     
+        </div>
+        <ul class="nav-list">
+            <li  class="nav-item">
+                <a href="/cartelera" class="nav-link">Cartelera</a>
+            </li>
+            <li  class="nav-item">
+                <a href="/funciones" class="nav-link">Funciones</a>
+            </li>
+            <li  class="nav-item">
+            <a href="#" class="nav-link">Peliculas</a>
+            </li>
+        </ul>
+    </nav>
+    <nav class="navbar-left">
+        <ul class="nav-list">
+        <div class="hamburger-menu2">
+            <i class="fas fa-user"></i>                               
+        </div>
+        <li  class="nav-item">
+            <a href="/Mi-Cuenta" class="nav-link">Mi Cuenta</a>
+        </li>
+        <li  class="nav-item">
+            <a href="/logout" class="nav-link">Cerrar Sesion</a>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div class="contenedor">
+        <div class="poster">
+            <img src="{{ url_for('static', filename='assets/poster7.jpg') }}" alt="">
+        </div>        
+        <div class="description">
+            <p class="tiltle">El Último Duelo</p>
+            <p class="title-english">Titulo en ingles: The Last Duel</p>
+            <p class="release-date">Estreno: 14-Oct-2021</p>
+            <p class="gender">Género: Drama</p>
+            <p class="PG">Exclusivamente para Mayores de 15 años</p>
+            <p class="duration">152 min</p>
+        </div>
+        <div class="trailer">
+            <iframe src="https://www.youtube.com/embed/8W1CvMT_MrA"></iframe>
+        </div>
+    </div>
+    <div class="contenedor2">
+       
+        <div class="description2">
+            <p class="sinopsi">Una apasionante historia de traición y venganza enmarcada en la brutalidad y opresión femenina de la Francia del siglo XIV. La historia épica, basada en hechos reales descritos en el libro The Last Duel: A True Story of Crime, Scandal, and Trial by Combat in Medieval France, es protagonizada por el ganador de un Óscar® Matt Damon y el dos veces nominado a los premios Óscar® Adam Driver que interpretan a dos lords en disputa, ambos de noble cuna, que deben resolver sus agravios en un duelo a muerte.</p>
+    
+            <p class="titulo">Titulo Original:</p>
+                <p class="texto">The Last Duel</p>
+            <p class="titulo">Pais de Origen</p>
+                <p class="texto">United States of America</p>
+            <p class="titulo">Director</p>
+                <p class="texto">Ridley Scott</p>
+            <p class="titulo">Actores</p>
+                <p class="texto">Matt Damon, Adam Driver, Jodie Comer y Ben Affleck</p>
+        </div>
+
+       <div class="movie-box3">
+            <div class="movie-box3-1">
+                <div class="title-hours">
+                    <h2>Cine Colombia</h2>
+                </div>
+                <div class="movie-hours">
+                    <h3>Horarios</h3>
+                </div>
+                
+                <div class = "daily-functions">
+                    <div class="daily">
+                        <h4>MAR
+                            <P class="day">12-oct</p>
+                        </h4>
+                        
+                    </div>
+                    <div class="daily">
+                        <h4> MIE 
+                            <P class="day">13-oct</p>
+                        </h4>
+                    </div>
+                    <div class="daily">
+                        <h4>JUE
+                            <P class="day">14-oct</p>
+                        </h4>
+                    </div>
+                    <div class="daily">
+                        <h4>VIE
+                            <P class="day">15-oct</p>
+                        </h4>
+                    </div>
+                    <div class="daily">
+                        <h4>SAB
+                            <P class="day">16-oct</p>
+                        </h4>
+                    </div>
+
+                </div> <!-- fin de los dias de las funciones, barra -->
+                <div class="show-time-2d">
+                    <div class="hours-2d">
+                        <h2>2D</h2>
+                    </div>
+                    <div class="hours-btn">
+                        <button class="btn" id="btn-3-d2">3:00pm</button>
+                        <button class="btn" id="btn-5-d2">5:00pm</button>
+                        <button class="btn" id="btn-7-d2">7:00pm</button>
+                        <button class="btn" id="btn-9-2d">9:00pm</button>
+                    </div>
+                    
+                </div>
+                <div class="show-time-3d">
+                    <div class="hours-3d">
+                        <h2>3D</h2>
+                    </div>
+                    <div class="hours-btn">
+                        <button class="btn" id="btn-3-3d">3:00pm</button>
+                        <button class="btn" id="btn-5-3d">5:00pm</button>
+                        <button class="btn" id="btn-7-3d">7:00pm</button>
+                        <button class="btn" id="btn-9-3d">9:00pm</button>                        
+                    </div>
+                </div>
+            </div> <!-- fin caja 3-1 barra-funciones y horas -->
+        </div>
+    </div>
+
+<footer>
+    <div class="footer-content">
+        <img class="logo-footer" src="{{ url_for('static', filename='assets/Logo CineColombia.png') }}" alt="">
+        <ul class="links">
+            <li>
+                <a href="https://www.uninorte.edu.co">
+                    <img class="logo-uninorte" src="{{ url_for('static', filename='assets/Uninorte-png.png') }}" alt="">
+                </a>
+            </li>  
+            <li>
+                <a href="#">
+                    <span>Información Legal</span>
+                </a>
+            </li>
+            <li>
+                <span class="ceparador">|</span>
+            </li>
+            <li>
+                <a href="#">
+                    <span>Acerca de Cineco</span>
+                </a>
+            </li>
+            <li>
+                <span class="ceparador">|</span>
+            </li>
+            <li>
+                <a href="#">
+                    <span>Contáctanos PQRS</span>
+                </a>
+            </li>
+            <li>
+                <span class="ceparador">|</span>
+            </li>
+            <li>
+                <a href="#">
+                    <span>Preguntas Frecuentes</span>
+                </a>
+            </li>
+            <li>  
+                <a href="https://www.misiontic2022.gov.co">
+                    <img class="logo-misiontic" src="{{ url_for('static', filename='assets/misiontic_logo.png') }}" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>copyright &copy;2021 Cine Colombia. designed by <span>grupo 38</span></p>
+    </div>
+</footer>
+<script type="text/javascript" src="{{ url_for('static', filename='js/header.js') }}"></script>
+</body>
+</html>

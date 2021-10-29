@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/usuario.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/responsive.css') }}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <title>Mi Cuenta</title>
+</head>
+<header>
+    <a href="{{url_for('index')}}" class="enlace">
+        <img src="{{ url_for('static', filename='assets/Logo CineColombia.png') }}" alt="" class="logo">
+    </a>
+    <div class="menu-header">
+        <div class="buscador">
+            <input class="buscar" type="text" placeholder="Buscar en Cine Colombia" required>
+            <div class="btn-buscar">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar-righ">
+        <div class="hamburger-menu">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div> 
+            <div class="line line-3"></div>                                     
+        </div>
+        <ul class="nav-list">
+            <li  class="nav-item">
+                <a href="/cartelera" class="nav-link">Cartelera</a>
+            </li>
+            <li  class="nav-item">
+                <a href="/funciones" class="nav-link">Funciones</a>
+            </li>
+            <li  class="nav-item">
+            <a href="#" class="nav-link">Peliculas</a>
+            </li>
+        </ul>
+    </nav>
+    <nav class="navbar-left">
+        <ul class="nav-list">
+        <div class="hamburger-menu2">
+            <i class="fas fa-user"></i>                               
+        </div>
+        <li  class="nav-item">
+            <a href="/Mi-Cuenta" class="nav-link">Mi Cuenta</a>
+        </li>
+        <li  class="nav-item">
+            <a href="/logout" class="nav-link">Cerrar Sesion</a>
+        </ul>
+    </nav>
+</header>
+<body>
+    <section class="seccion-perfil-usuario">
+        <div class="perfil-usuario-body">
+            <div class="perfil-usuario-bio">
+                <h3 class="titulo">{{name}}</h3>
+            </div>
+            <div class="perfil-usuario-footer">
+                <ul class="lista-datos">
+                    <a href="#"><li>Compras</li></a>
+                    <li>Direccion</li><p>{{direccion}}</p>
+                    <li>Telefono/Celular</li><p>{{telefono}}</p>
+                    <li>Fecha de nacimiento</li><p>{{date}}</p>
+                </ul>
+                <ul class="lista-datos">
+                    <li>Correo</li><p>{{email}}</p>
+                    <a href="/Confirmar-contraseña"><li>Cambiar contraseña</li></a>
+                    <li>Genero</li><p>{{genero}}</p>
+                    <button class="bto-editar" onclick="location.href='/editar-informacion';">Editar</button>
+                </ul>
+                
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <img class="logo-footer" src="{{ url_for('static', filename='assets/Logo CineColombia.png') }}" alt="">
+            <ul class="links">
+                <li>
+                    <a href="https://www.uninorte.edu.co">
+                        <img class="logo-uninorte" src="{{ url_for('static', filename='assets/Uninorte-png.png') }}" alt="">
+                    </a>
+                </li>  
+                <li>
+                    <a href="#">
+                        <span>Información Legal</span>
+                    </a>
+                </li>
+                <li>
+                    <span class="ceparador">|</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Acerca de Cineco</span>
+                    </a>
+                </li>
+                <li>
+                    <span class="ceparador">|</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Contáctanos PQRS</span>
+                    </a>
+                </li>
+                <li>
+                    <span class="ceparador">|</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Preguntas Frecuentes</span>
+                    </a>
+                </li>
+                <li>  
+                    <a href="https://www.misiontic2022.gov.co">
+                        <img class="logo-misiontic" src="{{ url_for('static', filename='assets/misiontic_logo.png') }}" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy;2021 Cine Colombia. designed by <span>grupo 38</span></p>
+        </div>
+    </footer>
+<script type="text/javascript" src="{{ url_for('static', filename='js/header.js') }}"></script>
+</body>
+</html>

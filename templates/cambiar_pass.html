@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;500;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/login.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles/normalize.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles/responsive.css') }}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<title>Cambiar contraseña</title>
+</head>
+<body>
+	<img class="wave" src="{{ url_for('static', filename='assets/wave.png') }}">
+		<div class="container">
+			<div class="img">
+				<img src="{{ url_for('static', filename='assets/cinta.png') }}">
+			</div>
+		<div class="login-content">
+			<form class="login_form" action="{{ url_for('cambiar_pass')}}" method="POST"  name="form" >
+				<img src="{{ url_for('static', filename='assets/CineColombia Azul.png') }}">
+				<h1 class="title">Cambiar contraseña</h1>
+           		<div class="input-div pass">
+           			<div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   	</div>
+           		   	<div class="div">
+           		    	<h5>Contraseña nueva</h5>
+           		    	<input type="password" name="password" id="password" class="input">
+            	   	</div>
+					<button id="show_password" class="btn-primary" type="button" onclick="ShowHidePassword()"> <span class="fas fa-eye-slash icon"></span></button>
+            	</div>
+				<div class="input-div pass">
+					<div class="i"> 
+						<i class="fas fa-lock"></i>
+					   </div>
+					   <div class="div">
+						<h5>Confirmar contraseña</h5>
+						<input type="password" name="password2" id="password2" class="input">
+					</div>
+				</div>
+				<button class="btn" type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+<script type="text/javascript" src="{{ url_for('static', filename='js/login.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/valid-login.js') }}"></script>
+
+</body>
+</html>
